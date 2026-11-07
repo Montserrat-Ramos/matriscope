@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172235">
+  <meta name="description" content="MatriScope: plataforma local para revisión de evidencia científica con RAG y trazabilidad.">
+  <title>MatriScope · Espacio de investigación</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./brand.css">
+  <link rel="stylesheet" href="./capture.css">
+  <link rel="stylesheet" href="./live.css">
+  <script>
+    if (new URLSearchParams(location.search).has('capture')) {
+      document.documentElement.classList.add('capture-export');
+    }
+  </script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <span class="brand-symbol brand-image" aria-hidden="true"></span>
+        <span class="brand-copy"><strong>MatriScope</strong><small>Scientific intelligence</small></span>
+      </div>
+      <div class="workspace-switch"><span class="work-badge">MS</span><span><strong>Espacio científico</strong><small>Entorno local · 2026</small></span><span class="chevron">⌄</span></div>
+      <nav id="nav" class="nav"></nav>
+      <div class="sidebar-bottom"><div class="local-indicator"><span class="status-dot"></span><div><strong id="live-service">Comprobando servicio</strong><small id="live-models">Estado de Ollama pendiente</small></div></div><div class="sidebar-caption">MatriScope · ejecución local</div></div>
+    </aside>
+
+    <div class="page-frame">
+      <header class="topbar">
+        <div class="top-left"><button class="icon-btn mobile-menu" data-action="menu" aria-label="Abrir menú">☰</button><div class="breadcrumb"><span>MatriScope</span><b>/</b><strong id="top-page-title">Inicio</strong></div></div>
+        <div class="top-right"><span class="top-status"><span class="status-dot"></span> <span id="live-environment">Comprobando API</span></span><button class="icon-btn" data-action="help" title="Estado del sistema" aria-label="Información">?</button><div class="avatar" title="Investigadora">MR</div></div>
+      </header>
+      <main class="main-content" id="main-content" tabindex="-1"></main>
+      <footer class="bottom-bar"><span>MatriScope · Desarrollo local v0.3.21</span><span>Las afirmaciones generadas deben revisarse frente a sus fuentes originales</span></footer>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="operation-overlay" class="operation-overlay" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true" hidden>
+    <div class="operation-dialog">
+      <div class="operation-icon" aria-hidden="true"><span class="operation-spinner"></span><span class="operation-core">MS</span></div>
+      <span class="operation-eyebrow">MATRISCOPE · PROCESAMIENTO LOCAL</span>
+      <h2 id="operation-title">Procesando solicitud</h2>
+      <p id="operation-description">Espera mientras se completa la operación.</p>
+      <div class="operation-progress" aria-hidden="true"><span></span></div>
+      <div class="operation-bottom"><span>La operación continúa en segundo plano</span><strong id="operation-elapsed">0 s</strong></div>
+      <small>Por favor, espera sin volver a pulsar el botón.</small>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+  <script src="./live.js"></script>
+</body>
+</html>

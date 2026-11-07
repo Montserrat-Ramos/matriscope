@@ -1,0 +1,18 @@
+/* Only active with ?capture=1: a full-document composition for design exports. */
+html.capture-export { scroll-behavior: auto !important; }
+html.capture-export .app-shell { position: relative; align-items: stretch; }
+html.capture-export .sidebar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+}
+html.capture-export .nav {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+html.capture-export .sidebar-bottom { margin-top: 26px; }
+html.capture-export .page-frame { min-height: 100vh; }
+html.capture-export .topbar { position: relative; top: auto; }
+html.capture-export .main-content { overflow: visible; }

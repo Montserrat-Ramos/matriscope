@@ -1,0 +1,9 @@
+.brand-image {
+  width: 45px;
+  height: 46px;
+  background-image: url('./assets/logo.png');
+  background-repeat: no-repeat;
+  background-size: 235px 78.4px;
+  background-position: -14px center;
+  flex-shrink: 0;
+}
